@@ -32,10 +32,19 @@ fun HalamanHome(
 ){
     val image = painterResource(id = R.drawable.img)
     Column (
-        modifier = Modifier.padding(20.dp),
-        verticalArrangement = Arrangement.SpaceBetween,
+        modifier = Modifier
+            .padding(20.dp)
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
+        Column {
+            Image(
+                painter = image,
+                contentDescription = null,
+                contentScale = ContentScale.Crop
+            )
+        }
         OutlinedCard(
             colors = CardDefaults.cardColors(
                 containerColor = MaterialTheme.colorScheme.surface,
@@ -46,11 +55,7 @@ fun HalamanHome(
                 modifier = Modifier
                     .align(Alignment.CenterHorizontally)
             ) {
-                Image(
-                    painter = image,
-                    contentDescription = null,
-                    contentScale = ContentScale.Crop
-                )
+
             }
         }
         Row (modifier = Modifier.fillMaxWidth(),
